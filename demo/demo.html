@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular scroll panels</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../dist/directive.css">
+    <link rel="stylesheet" href="demo.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">ScrollPanels</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div ng-controller="DemoCtrl">
+      <scroll-container>
+        <scroll-panel is-open="true">
+          <div ng-repeat="notification in notifications | orderBy:'-timestamp'">
+            <span>
+              {{notification.timestamp | date:"dd.MM.yyyy"}}
+              <button type="button" class="btn btn-xs btn-default" ng-click="open()">Details</button>
+            </span>
+            <p>{{notification.text}}</p>
+            <hr>
+          </div>
+        </scroll-panel>
+
+        <scroll-panel is-open="isOpen" width="380">
+          <div class="form-group">
+            <label for="field1">Field 1</label>
+            <input type="text" class="form-control" id="field">
+          </div>
+          <div class="form-group">
+            <label for="field2">Field 2</label>
+            <input type="text" class="form-control" id="field2">
+          </div>
+          <div class="form-group">
+            <label for="field3">Field 3</label>
+            <input type="text" class="form-control" id="field3">
+          </div>
+          <div class="form-group">
+            <label for="field4">Field 4</label>
+            <input type="text" class="form-control" id="field4">
+          </div>
+          <div class="form-group">
+            <label for="field5">Field 5</label>
+            <input type="text" class="form-control" id="field5">
+          </div>
+          <div class="form-group">
+            <label for="field6">Field 6</label>
+            <input type="text" class="form-control" id="field6">
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-primary" ng-click="close()">Save</button>
+            <button type="button" class="btn btn-default" ng-click="close()">Cancel</button>
+          </div>
+        </scroll-panel>
+      </scroll-container>
+    </div>
+
+    <script src="../dist/directive.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
