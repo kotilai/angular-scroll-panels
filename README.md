@@ -1,5 +1,5 @@
 # angular-scroll-panels
-First [Demo](https://kotilai.github.io/angular-scroll-panels/)
+First [Demo](https://kotilai.github.io/angular-scroll-panels/) (just opens and closes panels)
 ### Todo
 * Opening and closing side panel changes main panel scroll position
 * Uses Flex -> IE testing
