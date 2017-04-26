@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angular-scroll-panels', [])
+angular.module('angular-scroll-panels', ['templates'])
 .directive('scrollContainer', function () {
   return {
     restrict: 'E',
@@ -69,3 +69,6 @@ angular.module('angular-scroll-panels', [])
   };
 })
 ;
+
+// For template cache
+angular.module('templates', []);
